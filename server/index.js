@@ -12,7 +12,7 @@ const app = express();
 app.use(json());
 app.use(cors());
 
-app.get("/api/scores", mainCtrl.getScores);
+app.post("/api/scores", mainCtrl.getScores);
 // app.post("/api/players", mainCtrl.addPlayers);
 // app.put("/api/players/:id", mainCtrl.updatePlayers);
 // app.delete("/api/players/:id", mainCtrl.deletePlayers);

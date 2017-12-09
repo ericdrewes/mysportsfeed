@@ -1,0 +1,45 @@
+body {
+    background: url('https://img00.deviantart.net/0d95/i/2016/310/2/e/2016_2017_nba_season_wallpaper_by_skdworld-dani1mj.png')
+}
+
+.body {
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.title {
+    text-shadow: 2px 2px 3px black;
+}
+h1 {
+    color: white;
+}
+h3 {
+    color: white;
+    text-shadow: 2px 2px 3px black;
+}
+
+.results {
+    display: flex;
+    flex-direction: row;
+}
+
+.stats {
+    width:90vw;
+    display: flex;
+    flex-direction: row;
+}
+
+#date {
+    width:10vw;
+}
+
+
+
+button {
+    width: 50px;
+    
+}
