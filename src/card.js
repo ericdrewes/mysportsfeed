@@ -54,20 +54,22 @@ export default class card extends Component {
     }
 
     return (
-      <div className="body">
-       <h1 className="title">PostSeason NBA Scores</h1>
-        <div className="inputDates">
-          <input
-            id="date"
-            type="date"
-            onChange={e => {
-              this.props.handleUserInput(e);
-            }}
-          />
-          {deleteButton}
-          {gameData}
-        </div> 
-      </div>
+    <div className="body">
+       <div className="transparent">
+        <h1 className="title">PostSeason NBA Scores</h1>
+            <div className="inputDates">
+                <input
+                    id="date"
+                    type="date"
+                    onChange={e => {
+                    this.props.handleUserInput(e);
+                    }}
+                />
+                {deleteButton}
+                {gameData}
+            </div> 
+        </div>
+    </div>
     );
   }
 }

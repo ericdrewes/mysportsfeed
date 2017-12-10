@@ -1,5 +1,7 @@
 body {
-    background: url('https://img00.deviantart.net/0d95/i/2016/310/2/e/2016_2017_nba_season_wallpaper_by_skdworld-dani1mj.png')
+    background-image: url('https://img00.deviantart.net/0d95/i/2016/310/2/e/2016_2017_nba_season_wallpaper_by_skdworld-dani1mj.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .body {
@@ -12,14 +14,30 @@ body {
 }
 
 .title {
-    text-shadow: 2px 2px 3px black;
+    color: black;
 }
+
+.transparent {
+    margin: 40px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 20px;
+    opacity: 0.5;
+}
+
+
+
+
+
+#
+
 h1 {
-    color: white;
+    color: black;
 }
 h3 {
-    color: white;
-    text-shadow: 2px 2px 3px black;
+    color: black;
+ 
+    font-size: 20px;
 }
 
 .results {
@@ -35,6 +53,8 @@ h3 {
 
 #date {
     width:10vw;
+    background-color: white;
+    color: black;
 }
 
 
