@@ -1,6 +1,6 @@
 body {
     background-image: url('https://img00.deviantart.net/0d95/i/2016/310/2/e/2016_2017_nba_season_wallpaper_by_skdworld-dani1mj.png');
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
 }
 
@@ -26,23 +26,26 @@ body {
 }
 
 
-
-
-
-#
-
 h1 {
     color: black;
 }
 h3 {
     color: black;
- 
     font-size: 20px;
+    border: black;
+    font-style: bold;
 }
 
 .results {
     display: flex;
     flex-direction: row;
+    width: 80vw;
+}
+
+.resultsBorder {
+    width: 20vw; 
+    border: solid;
+    border-width: 2px;
 }
 
 .stats {
@@ -62,4 +65,10 @@ h3 {
 button {
     width: 50px;
     
+}
+
+.overflow{
+    max-height:80vh;
+    width: auto;
+    overflow: scroll;
 }

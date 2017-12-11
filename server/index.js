@@ -13,9 +13,9 @@ app.use(json());
 app.use(cors());
 
 app.post("/api/scores", mainCtrl.getScores);
-// app.post("/api/players", mainCtrl.addPlayers);
-// app.put("/api/players/:id", mainCtrl.updatePlayers);
-// app.delete("/api/players/:id", mainCtrl.deletePlayers);
+app.post('/api/scores/add', mainCtrl.addScores)
+app.put("/api/scores/:id", mainCtrl.updateScores);
+app.delete("/api/scores/:id", mainCtrl.destroyScores);
 
 app.listen(port, () => {
   console.log(`App listening on port: ${port}`);

@@ -6,70 +6,88 @@ export default class card extends Component {
     super(props);
 
     this.state = {
-      name: this.props.scores.name,
+      homeName: "",
+      awayName: "",
       check: false,
       input: ""
     };
-    //this.handleUserInput = this.handleUserInput.bind(this);
+
   }
 
-//   handleUserInput(e) {
-//     this.setState({ input: e.target.value });
-//     console.log(this.state.input)
-//   }
+render() {
+let deleteButton;
+let gameData = "NO GAMES SCHEDULED ON THIS DAY"
+  if(this.props.scores){
+    gameData = this.props.scores.map((game, index) =>{
+        return([
+            <div className="results">
+                {/* <div className="resultsBorder">
+                    <h3>{game.game.date} - </h3>,
+                </div> */}
 
-
-  render() {
-    let deleteButton;
-    let gameData = "No games for that day!"
-
-    if (this.state.check) {
-      deleteButton = (
-        <button onClick={() => this.props.destroyScores(this.props.index)}>
-          Delete Scores
-        </button>
-      );
-    }
-
-    if(this.props.scores){
-       gameData = this.props.scores.map(game =>{
-                console.log(this.props.scores)
-                return([
-                  <div className="results">
-                    {/* <h3>{game.game.date} - </h3>, */}
-  
-                    <h3>Away: {game.game.awayTeam.City}
-                              &nbsp;{game.game.awayTeam.Name}
-                    </h3>,
-                    <h3>Final Score: {game.awayScore} - </h3>,
-  
-                    <h3>Home: {game.game.homeTeam.City},
-                              {game.game.homeTeam.Name}
-                    </h3>,
-                    <h3>Final Score: {game.homeScore}</h3>
-                  </div>
-                ])
-            })
-        
-    }
-
-    return (
-    <div className="body">
-       <div className="transparent">
-        <h1 className="title">PostSeason NBA Scores</h1>
-            <div className="inputDates">
+                <div className="resultsBorder">
+                <h3>Home: <br/> {game.game.homeTeam.City} <br/>
+                            &nbsp;{game.game.homeTeam.Name}
+                </h3>
                 <input
-                    id="date"
-                    type="date"
-                    onChange={e => {
-                    this.props.handleUserInput(e);
-                    }}
+                    placeholder="Edit Team Name" 
+                    onChange={e => this.setState({homeName: e.target.value})}
+                /> 
+                <button onClick={() => this.props.updateNames(index, this.state.homeName, "home")}>
+                Update Names 
+                </button>
+                </div>
+
+                <div className="resultsBorder">
+                    <h3>Home Score: <br/> {game.homeScore}</h3>
+                </div>
+
+                <div className="resultsBorder">
+                <h3>Away: <br/> {game.game.awayTeam.City} <br/>
+                            &nbsp;{game.game.awayTeam.Name}
+                </h3>
+                <input
+                    placeholder="Edit Team Name" 
+                    onChange={e => this.setState({awayName: e.target.value})}
                 />
-                {deleteButton}
-                {gameData}
-            </div> 
-        </div>
-    </div>
-    );
-  }
+                <button onClick={() => this.props.updateNames(index, this.state.awayName, "away")}>
+                Update Names 
+                </button>
+                </div>
+
+                <div className="resultsBorder">
+                    <h3>Away Score: <br/> {game.awayScore}</h3>
+                </div>
+
+                <button onClick={() => this.props.destroyScores(index)}>
+                    Delete Row
+                </button>
+            </div>
+            ])
+        }
+    )
+    
 }
+
+        return (
+            <div className="body">
+                <div className="transparent">
+                    <h1 className="title">PostSeason NBA Scores</h1>
+                    <div className="inputDates">
+                        <input
+                            id="date"
+                            type="date"
+                            onChange={e => {
+                            this.props.handleUserInput(e);
+                            }}
+                        />
+                        {deleteButton}
+                        <div className="overflow">
+                            {gameData}
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            );
+          }
+        }
